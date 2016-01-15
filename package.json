@@ -1,0 +1,33 @@
+{
+  "name": "angular-starter",
+  "version": "0.0.0",
+  "private": false,
+  "author": "Oshri Kdoshim <cms.x.seo@gmail.com>",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oshri/angular-starter.git"
+  },
+  "keywords": [
+    "express",
+    "gulp",
+    "browserify",
+    "angular",
+    "sass",
+    "karma",
+    "jasmine",
+    "protractor",
+    "boilerplate",
+    "starter"
+  ],
+  "engines": {
+ 
+  },
+  "devDependencies": {
+    
+  },
+  "scripts": {
+
+  },
+  "license": "MIT"
+}
