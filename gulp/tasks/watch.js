@@ -7,4 +7,5 @@ gulp.task('watch', ['browserSync'], function(){
 	global.isWatching = true;
 
 	gulp.watch(config.styles.src, ['styles']);
+	gulp.watch(config.views.watch, ['views']);
 });

@@ -4,7 +4,7 @@ export default {
 	client: './client/',
 	build: './build/',
 	port: 3000,
-	UIPort: 3001
+	UIPort: 3001,
 
 	styles: {
 		src: 'client/styles/*.scss',
