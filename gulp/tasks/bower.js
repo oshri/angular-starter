@@ -11,6 +11,6 @@ gulp.task('bower', () => {
 	return gulp
 		.src(config.views.index)
 		.pipe(wire(config.bowerOptions))
-		.pipe(gulp.dest(config.build));
+		.pipe(gulp.dest(config.client));
 
 });

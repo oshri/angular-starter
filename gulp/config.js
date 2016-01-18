@@ -53,7 +53,7 @@ export default {
 	bowerOptions: {
 		json: './bower.json',
         directory: './bower_components/',
-        ignorePath: '../..'
+        ignorePath: '../'
 	},
 
 	packages: [

@@ -20,6 +20,9 @@ gulp.task('browserSync',function(){
 				}
 
 				return next();
+			},
+			routes:{
+				'/bower_components': './bower_components'
 			}
 		},
 		port: config.port,
