@@ -1,3 +1,6 @@
+import CoreCtrl from './core/scripts/controllers/core.ctrl.js';
+import demoDir from './core/scripts/directives/demo.dir.js';
+
 
 export default angular
 	.module('core',[
@@ -11,14 +14,14 @@ export default angular
 	.config(($stateProvider, $locationProvider, $urlRouterProvider, $httpProvider, CONFIG) => {
 
 		$stateProvider
-			.state('welcome', {
-				url: '/welcome',
-				templateUrl: CONFIG + 'state.welcome.tpl.html',
-				controller: 'WelcomeCtrl as weCtrl'
+			.state('core', {
+				url: '/core',
+				templateUrl: 'core/views/state.core.tpl.html',
+				controller: 'CoreCtrl as coCtrl'
 			});
 
 		$urlRouterProvider.otherwise(($injector, $location) => {
-			$location.path('/');
+			$location.path('core');
 		});
 
 		$locationProvider.html5Mode(true);
@@ -34,4 +37,6 @@ export default angular
 				this.$apply(fn);
 			}
 		};
-	});
+	})
+	.directive('demoDir',demoDir)
+	.controller('CoreCtrl', CoreCtrl);

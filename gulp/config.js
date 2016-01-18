@@ -26,7 +26,8 @@ export default {
 			'**/main.mdl.js',
 			'**/*.mdl.js',
 			'**/*.js'
-		]
+		],
+		dest: 'build/js'
 	},
 
 	assetExtensions: [
@@ -59,5 +60,10 @@ export default {
 	packages: [
         './package.json',
         './bower.json'
-    ]
+    ],
+
+    browserify: {
+    	bundleName: 'main.mdl.js',
+    	prodSourcemap: false
+  	}
 };
