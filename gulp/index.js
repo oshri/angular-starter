@@ -6,12 +6,12 @@ import onlayScripts from './util/scriptsFilter';
 
 const tasks = fs.readdirSync('./gulp/tasks/').filter(onlayScripts);
 
-gulp.on('stop',function(){
-	if(!global.isWatching){
-		process.nextTick(function(){
-			process.exit(0);
-		});
-	}
+gulp.on('stop', () => {
+	if ( !global.isWatching ) {
+	    process.nextTick(function () {
+	      process.exit(0);
+	    });
+  	}
 });
 
 tasks.forEach((task) => {

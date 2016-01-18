@@ -9,8 +9,7 @@ import handleErrors from '../util/handleErrors';
 import browserSync  from 'browser-sync';
 import autoprefixer from 'gulp-autoprefixer';
 
-gulp.task('styles', function(){
-
+gulp.task('styles', () => {
 	const createSourcemap = !global.isProd || config.styles.prodSourcemap;
 	const AUTOPREFIXER_BROWSERS = [
 	    'ie >= 10',
@@ -25,16 +24,18 @@ gulp.task('styles', function(){
 	];
 
 	return gulp.src(config.styles.src)
-		.pipe(gulpif(createSourcemap, sourcemaps.init()))
-		.pipe(sass({
-			sourceComments: !global.isProd,
-			outputStyle: global.isProd ? 'compressed' : 'nested',
-			includePaths: config.styles.sassIncludePaths
-		}))
-		.on('error', handleErrors)
-		.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-		.pipe(gulpif(
-			createSourcemap,sourcemaps.write(global.isProd ? './' : null)
-		))
-		.pipe(gulp.dest(config.styles.dest));
+	    .pipe(gulpif(createSourcemap, sourcemaps.init()))
+	    .pipe(sass({
+	      sourceComments: !global.isProd,
+	      outputStyle: global.isProd ? 'compressed' : 'nested',
+	      includePaths: config.styles.sassIncludePaths
+	    }))
+	    .on('error', handleErrors)
+	    .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+	    .pipe(gulpif(
+	      createSourcemap,
+	      sourcemaps.write( global.isProd ? './' : null ))
+	    )
+	    .pipe(gulp.dest(config.styles.dest))
+	    .pipe(browserSync.stream());
 });

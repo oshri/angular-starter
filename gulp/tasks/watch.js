@@ -3,7 +3,7 @@
 import config 	from '../config';
 import gulp 	from 'gulp';
 
-gulp.task('watch', ['browserSync'], function(){
+gulp.task('watch', ['browserSync'], () => {
 	global.isWatching = true;
 
 	gulp.watch(config.styles.src, ['styles']);

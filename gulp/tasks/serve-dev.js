@@ -1,10 +1,9 @@
 'use strict';
 
-import config 		from '../config';
 import gulp 		from 'gulp';
 import runSequence 	from 'run-sequence';
 
-gulp.task('serve-dev', function(cb){
+gulp.task('serve-dev', ['clean'], (cb) => {
 	global.isProd = false;
-	runSequence(['styles','views'], 'watch' , cb);
+	runSequence(['styles','views'], 'watch', cb);
 });
