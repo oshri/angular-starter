@@ -44,17 +44,8 @@ export default {
 
 	views: {
 		index: 'client/index.html',
-		src: 'client/components/**/views/*.html',
+		core: 'client/core/views/*.html',
+		components: 'client/components/**/views/*.html',
 		dest: 'build/js'
-	},
-
-	init: function(){
-		this.views.watch = [
-			this.views.index,
-			this.views.src
-		];
-
-		return this;
 	}
-
-}.init();
+};

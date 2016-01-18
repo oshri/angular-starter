@@ -11,7 +11,7 @@ gulp.task('views', () => {
 	const indexFile = gulp.src(config.views.index)
 	    .pipe(gulp.dest(config.build));
 
-	const views = gulp.src(config.views.src)
+	const views = gulp.src([config.views.core,config.views.components])
 	    .pipe(templateCache({
 	      standalone: true
 	    }))
