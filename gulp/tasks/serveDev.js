@@ -5,5 +5,5 @@ import runSequence 	from 'run-sequence';
 
 gulp.task('serve-dev', ['clean'], (cb) => {
 	global.isProd = false;
-	runSequence(['styles','views'], 'watch', cb);
+	runSequence(['styles','views','bower'], 'watch', cb);
 });

@@ -7,6 +7,6 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 
 const $ = gulpLoadPlugins();
 
-gulp.task('optimize', [], () => {
-	
+gulp.task('optimize', () => {
+
 });
