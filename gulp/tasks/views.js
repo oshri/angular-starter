@@ -16,9 +16,6 @@ gulp.task('views', () => {
 
 	let files = [].concat(config.views.templates);
 
-	log(files);
-
-
 	const templateCache = gulp.src(files)
 		.pipe($.minifyHtml({empty: true}))
 		.pipe($.angularTemplatecache(

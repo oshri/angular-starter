@@ -78,6 +78,9 @@
     "wiredep": "^3.0.0",
     "yargs": "^3.32.0"
   },
-  "scripts": {},
-  "license": "MIT"
+  "scripts": {
+    "test": "./node_modules/.bin/gulp test",
+    "webdriver-update": "./node_modules/.bin/webdriver-manager update",
+    "postinstall": "npm run webdriver-update"
+  }
 }
