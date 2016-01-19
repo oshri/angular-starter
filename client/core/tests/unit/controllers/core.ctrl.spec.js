@@ -12,7 +12,7 @@ describe('Controller: CoreCtrl', function() {
 	beforeEach(inject(function($controller, $rootScope) {
 		scope = $rootScope.$new();
 
-		CoreCtrl = $controller('CoreCtrl', {});
+		CoreCtrl = $controller('CoreCtrl', {$scope:scope});
 	}));
 
 	it('should be defined', function() {
