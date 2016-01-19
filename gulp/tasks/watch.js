@@ -8,5 +8,5 @@ gulp.task('watch', ['browserSync'], () => {
 
 	gulp.watch(config.scripts.all, ['lint']);
 	gulp.watch(config.styles.src, ['styles']);
-	gulp.watch([config.views.core,config.views.components,config.views.index], ['views']);
+	gulp.watch([config.views.index,config.views.templates], ['views']);
 });

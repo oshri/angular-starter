@@ -16,7 +16,7 @@ export default angular
 		$stateProvider
 			.state('core', {
 				url: '/core',
-				templateUrl: 'core/views/state.core.tpl.html',
+				templateUrl: 'state.core.tpl.html',
 				controller: 'CoreCtrl as coCtrl'
 			});
 

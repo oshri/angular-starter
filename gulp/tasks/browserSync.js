@@ -11,7 +11,7 @@ gulp.task('browserSync',function(){
 
 	browserSync.init({
 		server: {
-			baseDir: config.build,
+			baseDir: config.temp,
 			middleware: function(req, res, next){
 				let fileHref = url.parse(req.url).href;
 

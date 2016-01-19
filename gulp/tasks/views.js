@@ -1,22 +1,32 @@
 'use strict';
 
-import config        from '../config';
-import gulp          from 'gulp';
-import browserSync   from 'browser-sync';
-import merge         from 'merge-stream';
-import templateCache from 'gulp-angular-templatecache';
+import config        	from '../config';
+import gulp          	from 'gulp';
+import gulpLoadPlugins 	from 'gulp-load-plugins';
+import browserSync   	from 'browser-sync';
+import merge         	from 'merge-stream';
+import log 				from '../util/log';
+
+const $ = gulpLoadPlugins();
 
 gulp.task('views', () => {
 
 	const indexFile = gulp.src(config.views.index)
-	    .pipe(gulp.dest(config.build));
+	    .pipe(gulp.dest(config.temp));
 
-	const views = gulp.src([config.views.core,config.views.components])
-	    .pipe(templateCache({
-	      standalone: true
-	    }))
-	    .pipe(gulp.dest(config.views.dest))
-	    .pipe(browserSync.stream());
+	let files = [].concat(config.views.templates);
 
-	return merge(indexFile, views);
+	log(files);
+
+
+	const templateCache = gulp.src(files)
+		.pipe($.minifyHtml({empty: true}))
+		.pipe($.angularTemplatecache(
+			config.views.templatesOptions.file,
+			config.views.templatesOptions.options))
+		.pipe(gulp.dest(config.scripts.temp))
+		.pipe(browserSync.stream());
+
+
+	return merge(indexFile, templateCache);
 });

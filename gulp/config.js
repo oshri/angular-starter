@@ -3,15 +3,17 @@
 export default {
 	root: './',
 	client: './client/',
+	temp: './temp/',
 	build: './build/',
 	port: 3000,
 	UIPort: 3001,
 
 	styles: {
 		src: 'client/styles/*.scss',
-		dest: 'build/css',
 		prodSourcemap: false,
-		sassIncludePaths:[]
+		sassIncludePaths:[],
+		temp: 'temp/css',
+		dest: 'build/css'
 	},
 
 	scripts: {
@@ -27,6 +29,7 @@ export default {
 			'**/*.mdl.js',
 			'**/*.js'
 		],
+		temp: 'temp/js',
 		dest: 'build/js'
 	},
 
@@ -46,8 +49,18 @@ export default {
 
 	views: {
 		index: 'client/index.html',
-		core: 'client/core/views/*.html',
-		components: 'client/components/**/views/*.html',
+		templates: [
+			'client/core/views/*.html',
+			'client/components/**/views/*.html'
+		],
+		templatesOptions: {
+			file: 'templates.js',
+			options: {
+				module: 'core',
+				standAlone: false
+			}
+		},
+		temp: 'temp/js',
 		dest: 'build/js'
 	},
 

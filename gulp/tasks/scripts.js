@@ -1,17 +1,17 @@
 'use strict';
 
-import config 			from '../config';
-import gulp 			from 'gulp';
-import gulpLoadPlugins 	from 'gulp-load-plugins';
-import source       	from 'vinyl-source-stream';
-import buffer       	from 'vinyl-buffer';
-import watchify     	from 'watchify';
-import browserify   	from 'browserify';
-import babelify     	from 'babelify';
-import browserSync  	from 'browser-sync';
-import ngAnnotate   	from 'browserify-ngannotate';
-import handleErrors 	from '../util/handleErrors';
-import log 				from '../util/log';
+import config 			     from '../config';
+import gulp 			       from 'gulp';
+import gulpLoadPlugins 	 from 'gulp-load-plugins';
+import source       	   from 'vinyl-source-stream';
+import buffer       	   from 'vinyl-buffer';
+import watchify     	   from 'watchify';
+import browserify   	   from 'browserify';
+import babelify     	   from 'babelify';
+import browserSync  	   from 'browser-sync';
+import ngAnnotate   	   from 'browserify-ngannotate';
+import handleErrors 	   from '../util/handleErrors';
+import log 				       from '../util/log';
 
 const $ = gulpLoadPlugins();
 
@@ -61,7 +61,7 @@ function buildScript(file) {
         compress: { drop_console: true }
       }))))
       .pipe($.if(createSourcemap(), $.sourcemaps.write(sourceMapLocation)))
-      .pipe(gulp.dest(config.scripts.dest))
+      .pipe(gulp.dest(config.scripts.temp))
       .pipe(browserSync.stream());
   }
 

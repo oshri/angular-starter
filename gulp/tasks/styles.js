@@ -36,6 +36,6 @@ gulp.task('styles', () => {
 	      createSourcemap,
 	      sourcemaps.write( global.isProd ? './' : null ))
 	    )
-	    .pipe(gulp.dest(config.styles.dest))
+	    .pipe(gulp.dest(config.styles.temp))
 	    .pipe(browserSync.stream());
 });
