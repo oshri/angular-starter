@@ -17,7 +17,7 @@ build
 
 # Ignore Test reporters
 ###################
-**/test/coverage
+/coverage
 report
 
 
