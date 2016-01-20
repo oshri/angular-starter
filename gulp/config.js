@@ -81,6 +81,7 @@ export default {
   	},
 
   	test: {
-	    karma: './karma.conf.js'
+	    karma: './karma.conf.js',
+	    specs: 'client/**/**/*.spec.js'
 	}
 };
