@@ -78,5 +78,10 @@ export default {
     browserify: {
     	bundleName: 'main.mdl.js',
     	prodSourcemap: false
-  	}
+  	},
+
+  	test: {
+	    karma: './karma.conf.js',
+	    specs: 'client/**/**/*.spec.js'
+	}
 };

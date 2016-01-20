@@ -5,8 +5,10 @@ import gulp 		from 'gulp';
 import url 			from 'url';
 import browserSync  from 'browser-sync';
 
-gulp.task('browserSync',function(){
+gulp.task('browserSync', [], () => {
+
 	const INDEX = 'index.html';
+
 	const ASSET_EXTENSION_REGEX = new RegExp(`\\b(?!\\?)\\.(${config.assetExtensions.join('|')})\\b(?!\\.)`, 'i');
 
 	browserSync.init({
@@ -22,7 +24,8 @@ gulp.task('browserSync',function(){
 				return next();
 			},
 			routes:{
-				'/bower_components': './bower_components'
+				'/bower_components': './bower_components',
+				'/node_modules': './node_modules'
 			}
 		},
 		port: config.port,
