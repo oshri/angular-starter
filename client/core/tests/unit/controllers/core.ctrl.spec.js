@@ -18,8 +18,4 @@ describe('Controller: CoreCtrl', function() {
 	it('should be defined', function() {
 		expect(CoreCtrl).toBeDefined();
 	});
-
-	it('should 1 be 2', function(){
-		expect(1).toBe(1);
-	});
 });

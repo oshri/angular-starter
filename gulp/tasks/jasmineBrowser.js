@@ -7,13 +7,10 @@ import log from '../util/log';
 
 const $ = gulpLoadPlugins();
 
-gulp.task('jasmine', ()=> {
-
+gulp.task('jasmine-browser', ()=> {
 	log("Start Jasmine");
 
-	let files = [].concat('temp/js/lib.js','temp/js/main.mdl.js',config.test.specs);
-
-	log("Files:", files);
+	let files = [].concat(config.unitTest.lib,config.unitTest.mainModule,config.unitTest.specs);
 
 	return gulp.src(files)
 		.pipe($.watch(files))

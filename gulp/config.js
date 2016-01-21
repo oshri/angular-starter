@@ -80,8 +80,15 @@ export default {
     	prodSourcemap: false
   	},
 
-  	test: {
-	    karma: './karma.conf.js',
+  	unitTest: {
+	    config: './karma.conf.js',
+	    lib: 'temp/js/lib.js',
+	    mainModule: 'temp/js/main.mdl.js',
 	    specs: 'client/**/**/*.spec.js'
+	},
+
+	e2eTest: {
+		config: './protractor.conf.js',
+		specs: 'client/**/**/tests/e2e/**/*_spec.js'
 	}
 };

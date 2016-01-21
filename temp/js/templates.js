@@ -1,2 +1,0 @@
-angular.module("core").run(["$templateCache", function($templateCache) {$templateCache.put("demoDir.tpl.html","<div class=demo-dir><span ng-bind=directiveName></span></div>");
-$templateCache.put("state.core.tpl.html","<div class=state-welcome>State Welcome !!<demo-dir></demo-dir></div>");}]);
