@@ -71,7 +71,9 @@ const ciAdditions = {
     testName: 'Karma Unit Tests',
     startConnect: false,
     build: process.env.TRAVIS_BUILD_NUMBER,
-    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
+    username: process.env.TRAVIS_USER,
+    accessKey: process.env.TRAVIS_ACCESS_KEY
   },
   browsers: Object.keys(customLaunchers),
   customLaunchers: customLaunchers,
