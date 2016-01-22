@@ -4,13 +4,15 @@ node_js:
 sudo: false
 
 before_script:
-  - npm install -g gulp
-  
-script: gulp test
+  - npm install -g gulp bower node-inspector bower karma karma-cli
+
+script:
+  - gulp test
 
 cache:
   directories:
     - node_modules
+    - bower_components
 
 addons:
   sauce_connect: true
