@@ -3,12 +3,11 @@ node_js:
   - "4.2"
 sudo: false
 
-script:
-  - ./node_modules/.bin/gulp test
+before_script:
+  - npm install -g gulp
+script: gulp test
 
 cache:
   directories:
     - node_modules
 
-addons:
-  sauce_connect: true
