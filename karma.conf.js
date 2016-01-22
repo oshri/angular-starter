@@ -60,20 +60,27 @@ const karmaBaseConfig = {
 };
 
 const customLaunchers = {
-  chrome: {
-    base: 'SauceLabs',
-    browserName: 'chrome'
-  }
+    SL_Chrome: {
+      base: 'SauceLabs',
+      platform: 'OS X 10.11',
+      browserName: 'chrome',
+      customData: {
+        awesome: true
+      }
+    },
+    SL_Firefox: {
+      base: 'SauceLabs',
+      platform: 'OS X 10.11',
+      browserName: 'firefox'
+    }
 };
-
+  
 const ciAdditions = {
   sauceLabs: {
     testName: 'Karma Unit Tests',
     startConnect: false,
     build: process.env.TRAVIS_BUILD_NUMBER,
-    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
-    username: process.env.TRAVIS_USER,
-    accessKey: process.env.TRAVIS_ACCESS_KEY
+    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
   },
   browsers: Object.keys(customLaunchers),
   customLaunchers: customLaunchers,
