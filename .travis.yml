@@ -6,12 +6,13 @@ sudo: false
 before_script:
   - npm install -g gulp
   - npm install -g bower
-  - npm install -g node-inspector
   - npm install -g karma
   - npm install -g karma-cli
   - bower install
 
 script:
+  - gulp views
+  - gulp scripts
   - gulp test
 
 cache:

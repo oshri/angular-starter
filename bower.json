@@ -4,7 +4,7 @@
   "private": false,
   "author": "Oshri Kdoshim <cms.x.seo@gmail.com>",
   "dependencies": {
-    "angular": "1.4.8",
+    "angular": "~1.4.x",
     "angular-animate": "~1.4.3",
     "angular-sanitize": "~1.4.3",
     "angular-ui-router": "~0.2.13",
@@ -12,7 +12,6 @@
     "angular-mocks": "~1.4.8"
   },
   "devDependencies": {
-    "angular-mocks": "~1.4.8",
     "angular-scenario": "~1.4.3"
   }
 }
