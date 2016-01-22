@@ -5,6 +5,7 @@ sudo: false
 
 before_script:
   - npm install -g gulp
+  
 script: gulp test
 
 cache:
