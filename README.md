@@ -1,6 +1,6 @@
 # Angular Starter Kit
 
-[![devDependency Status](https://david-dm.org/oshri/angular-starter/dev-status.svg)](https://david-dm.org/oshri/angular-starter#info=devDependencies)
+[![devDependency Status](https://david-dm.org/oshri/angular-starter/dev-status.svg)](https://david-dm.org/oshri/angular-starter#info=devDependencies) [![Build Status](https://travis-ci.org/oshri/angular-starter.svg)](https://travis-ci.org/oshri/oshri/angular-starter)
 
 # Getting Started
 
