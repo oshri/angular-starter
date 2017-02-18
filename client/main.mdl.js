@@ -1,12 +1,15 @@
-import CoreCtrl from './core/scripts/controllers/core.ctrl.js';
-import demoDir from './core/scripts/directives/demo.dir.js';
+import CoreCtrl 		from './core/scripts/controllers/core.ctrl.js';
+import demoDir 			from './core/scripts/directives/demo.dir.js';
+import queryBuilder from './components/queryBuilder/scripts/queryBuilder.mdl.js';
 
 
 export default angular
 	.module('core',[
 		'ngAnimate',
 		'ngSanitize',
-		'ui.router'
+		'ui.router',
+		'rx',
+		queryBuilder.name
 	])
 	.constant('CONFIG', {
 		views: 'core/views/'
@@ -26,7 +29,10 @@ export default angular
 
 		$locationProvider.html5Mode(true);
 	})
-	.run(($rootScope) => {
+	.run(($rootScope, $httpBackend) => {
+
+		var phones = [{name: 'phone1'}, {name: 'phone2'}];
+
 		$rootScope.safeApply = function(fn) {
 			var phase = this.$root.$$phase;
 			if (phase === '$apply' || phase === '$digest') {
